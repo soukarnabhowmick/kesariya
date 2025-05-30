@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kesariya - Premium Kashmiri Saffron</title>
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    img {
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Color Variables */
+    :root {
+      --primary: #FF7F00;
+      --secondary: #4CAF50;
+      --accent: #FFC107;
+      --light-bg: #FFF8E1;
+      --dark: #333;
+      --white: #fff;
+    }
+    
+    /* Utility Classes */
+    .text-center {
+      text-align: center;
+    }
+    
+    .mb-1 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .mb-2 {
+      margin-bottom: 1rem;
+    }
+    
+    .mb-3 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .mb-4 {
+      margin-bottom: 2rem;
+    }
+    
+    .mt-1 {
+      margin-top: 0.5rem;
+    }
+    
+    .mt-2 {
+      margin-top: 1rem;
+    }
+    
+    .mt-3 {
+      margin-top: 1.5rem;
+    }
+    
+    .mt-4 {
+      margin-top: 2rem;
+    }
+    
+    /* Announcement Bar */
+    .announcement-bar {
+      background-color: var(--accent);
+      color: var(--dark);
+      padding: 8px 0;
+      overflow: hidden;
+    }
+    
+    /* Header & Navigation */
+    header {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 1.5rem;
+    }
+    
+    .nav-links a {
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+      font-family: inherit;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--white);
+      border: 1px solid var(--primary);
+    }
+    
+    .btn-primary:hover {
+      background-color: #E67300;
+      border-color: #E67300;
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      color: var(--secondary);
+      border: 1px solid var(--secondary);
+    }
+    
+    .btn-outline:hover {
+      background-color: rgba(76, 175, 80, 0.1);
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(255, 127, 0, 0.3), rgba(255, 193, 7, 0.3)), 
+                  url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 120px 0;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .hero p {
+      font-size: 1.5rem;
+      color: var(--dark);
+      margin-bottom: 2rem;
+      font-weight: 600;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    /* Section Styling */
+    .section {
+      padding: 80px 0;
+    }
+    
+    .section-alt {
+      background-color: var(--light-bg);
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    /* About Section */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .about-images {
+      flex: 1;
+      min-width: 300px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      height: 400px;
+    }
+    
+    .about-image {
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .about-image.large {
+      grid-row: span 2;
+    }
+    
+    /* Saffron Gallery Section */
+    .saffron-gallery {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: white;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    
+    .gallery-image {
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gallery-caption {
+      padding: 1rem;
+      text-align: center;
+    }
+    
+    .gallery-caption h4 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Products Section */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    
+    .product-image {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--accent);
+      color: var(--dark);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    
+    .product-info {
+      padding: 1.5rem;
+    }
+    
+    .product-title {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .product-weight {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .product-price {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-top: 1rem;
+    }
+    
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    
+    /* Benefits Section */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .benefit-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .benefit-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      overflow: hidden;
+    }
+    
+    .benefit-icon {
+      width: 60px;
+      height: 60px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      color: white;
+    }
+    
+    /* Testimonials Section */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .testimonial-card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 2rem;
+      background: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    
+    .testimonial-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      opacity: 0.1;
+      border-radius: 0 12px 0 100px;
+      overflow: hidden;
+    }
+    
+    .stars {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    
+    .author-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    
+    /* Contact Section */
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .contact-bg {
+      background: linear-gradient(rgba(255, 127, 0, 0.1), rgba(255, 193, 7, 0.1)), 
+                  url('https://images.unsplash.com/photo-1600332744934-6bbfef328022?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      transition: border-color 0.3s;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #333 0%, #2c2c2c 100%);
+      color: var(--white);
+      padding: 4rem 0 2rem;
+      position: relative;
+    }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.05;
+    }
+    
+    .footer-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer-title {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.25rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+    
+    .newsletter-form {
+      display: flex;
+      margin-top: 1rem;
+    }
+    
+    .newsletter-input {
+      flex: 1;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px 0 0 4px;
+    }
+    
+    .newsletter-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .nav-links li {
+        margin: 0.5rem 0;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.25rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .about-images {
+        grid-template-columns: 1fr;
+        height: 300px;
+      }
+      
+      .about-image.large {
+        grid-row: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Announcement Bar with Marquee -->
+  <div class="announcement-bar">
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+      🌟 Premium Kashmiri Saffron Now Available | 🚚 Free Shipping on Orders Over ₹1000 | 🎉 Use Code KESARIYA10 for 10% Off Your First Order | 📞 Call +91 98147 33709 for Bulk Orders
+    </marquee>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">🌸 KESARIYA</div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#products" class="btn btn-primary">Shop Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>🌸 KESARIYA</h1>
+      <p>Premium Kashmiri Saffron for Exquisite Taste</p>
+      <div>
+        <a href="#products" class="btn btn-primary">Explore Products</a>
+        <a href="#about" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section section-alt" id="about">
+    <div class="container">
+      <h2 class="section-title">Our Story</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p class="mb-2">
+            Saffron is mostly grown in Kashmir and distributed throughout India by a number of middlemen, therefore, it is costly and frequently out of reach for many. The risk of adulteration is also raised by this intricate supply chain. A direct-to-consumer business strategy that guarantees affordability, purity, and equitable returns for farmers is thus, absolutely needed.
+          </p>
+          <p class="mb-2">
+            Our saffron cultivation project uses a simple yet effective setup involving a temperature controller and a fermentation chamber with a cooling mat to create optimal growth conditions. This low-cost, energy-efficient method allows off-season and region-independent cultivation of high-quality saffron. Unlike traditional farming, it ensures controlled temperature for consistent yield and purity without pesticides or advanced tech. The solution tackles commercial issues like limited growing seasons, high production costs, and low accessibility, making saffron farming more profitable, scalable, and feasible even in non-traditional areas.
+          </p>
+          <p class="mb-3">
+            The system is energy-efficient, scalable, and reduces manual effort through automation. This innovation promotes sustainable agriculture, lowers operational costs, and creates new opportunities for farmers, making saffron cultivation more accessible and profitable.
+          </p>
+          <a href="#" class="btn btn-primary">Read Our Full Story</a>
+        </div>
+        <div class="about-images">
+          <div class="about-image large">
+            <img src="https://images.unsplash.com/photo-1600332744934-6bbfef328022?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Saffron harvesting in Kashmir fields">
+          </div>
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fresh saffron threads">
+          </div>
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Saffron crocus flowers">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Saffron Gallery Section -->
+  <section class="saffron-gallery" id="gallery">
+    <div class="container">
+      <h2 class="section-title">Saffron Gallery</h2>
+      <p class="text-center mb-4">Discover the beauty and richness of authentic Kashmiri saffron</p>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="https://images.unsplash.com/photo-1600333859399-228aa03f7dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Premium saffron threads close-up">
+          </div>
+          <div class="gallery-caption">
+            <h4>Premium Saffron Threads</h4>
+            <p>Hand-picked red gold threads</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="https://images.unsplash.com/photo-1600333858835-232a27d2be1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Saffron powder in wooden spoon">
+          </div>
+          <div class="gallery-caption">
+            <h4>Pure Saffron Powder</h4>
+            <p>Finely ground for easy use</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Saffron crocus flowers in field">
+          </div>
+          <div class="gallery-caption">
+            <h4>Crocus Flowers</h4>
+            <p>Source of precious saffron</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Saffron threads in glass jar">
+          </div>
+          <div class="gallery-caption">
+            <h4>Stored Saffron</h4>
+            <p>Properly preserved quality</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="https://images.unsplash.com/photo-1600332744934-6bbfef328022?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Farmer harvesting saffron">
+          </div>
+          <div class="gallery-caption">
+            <h4>Traditional Harvesting</h4>
+            <p>Hand-picked at dawn</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="https://images.unsplash.com/photo-1600333862399-6bccd205275e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Saffron gift packaging">
+          </div>
+          <div class="gallery-caption">
+            <h4>Premium Packaging</h4>
+            <p>Perfect for gifting</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="section" id="products">
+    <div class="container">
+      <h2 class="section-title">Our Premium Saffron Products</h2>
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1600333859399-228aa03f7dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Premium Kashmiri Saffron Threads 0.5g">
+            <div class="product-badge">Best Seller</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Premium Saffron Threads</h3>
+            <div class="product-weight">Weight: 0.5g</div>
+            <p>Our signature Kashmiri saffron threads, handpicked and carefully dried to preserve their rich aroma and vibrant color.</p>
+            <div class="product-footer">
+              <span class="product-price">₹230</span>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1600333858835-232a27d2be1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kashmiri Saffron Powder 0.5g">
+            <div class="product-badge">Popular</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Saffron Powder</h3>
+            <div class="product-weight">Weight: 0.5g</div>
+            <p>Finely ground Kashmiri saffron powder for easy use in milk, sweets, biryanis, and traditional Indian dishes.</p>
+            <div class="product-footer">
+              <span class="product-price">₹220</span>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Premium Saffron Threads 1g">
+            <div class="product-badge">Value Pack</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Premium Saffron (Large)</h3>
+            <div class="product-weight">Weight: 1g</div>
+            <p>Double quantity of our premium Kashmiri saffron threads, perfect for regular cooking and special occasions.</p>
+            <div class="product-footer">
+              <span class="product-price">₹460</span>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1600333862399-6bccd205275e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Saffron Gift Box 2g">
+            <div class="product-badge">Gift Box</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Saffron Gift Box</h3>
+            <div class="product-weight">Weight: 2g (1g Threads + 1g Powder)</div>
+            <p>An elegant gift box containing premium saffron threads and powder, perfect for festivals and special occasions.</p>
+            <div class="product-footer">
+              <span class="product-price">₹920</span>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 5 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Organic Kashmiri Saffron 0.25g">
+            <div class="product-badge">Trial</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Trial Pack</h3>
+            <div class="product-weight">Weight: 0.25g</div>
+            <p>Perfect for first-time buyers to experience the authentic taste and aroma of Kashmiri saffron.</p>
+            <div class="product-footer">
+              <span class="product-price">₹115</span>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 6 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1600333859399-228aa03f7dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bulk Saffron 5g">
+            <div class="product-badge">Wholesale</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Bulk Pack</h3>
+            <div class="product-weight">Weight: 5g</div>
+            <p>Bulk quantity for restaurants, sweet shops, and regular users. Best value for money with premium quality.</p>
+            <div class="product-footer">
+              <span class="product-price">₹2,300</span>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="section section-alt" id="benefits">
+    <div class="container">
+      <h2 class="section-title">Benefits of Kesariya Saffron</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-image">
+            <img src="https://images.unsplash.com/photo-1600333859399-228aa03f7dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Antioxidant rich saffron">
+          </div>
+          <h3 class="mb-1">Rich in Antioxidants</h3>
+          <p>Our Kashmiri saffron contains powerful antioxidants that help protect your cells from damage and boost immunity.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-image">
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Mood enhancing saffron">
+          </div>
+          <h3 class="mb-1">Mood Enhancer</h3>
+          <p>Saffron has been traditionally used in Ayurveda for its mood-boosting properties and stress relief benefits.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-image">
+            <img src="https://images.unsplash.com/photo-1600333858835-232a27d2be1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Flavor enhancing saffron">
+          </div>
+          <h3 class="mb-1">Enhances Flavor</h3>
+          <p>Just a pinch of our saffron transforms ordinary dishes like biryani, kheer, and milk into extraordinary culinary experiences.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-image">
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Pure authentic saffron">
+          </div>
+          <h3 class="mb-1">100% Pure & Authentic</h3>
+          <p>We guarantee the purity of our Kashmiri saffron, with no additives, artificial colors, or fillers - just pure saffron goodness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-bg">
+            <img src="https://images.unsplash.com/photo-1600333859399-228aa03f7dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Saffron background">
+          </div>
+          <div class="stars">★★★★★</div>
+          <p>"The quality of Kesariya saffron is unmatched. My biryanis have never tasted better! The aroma is simply divine and authentic. Highly recommend!"</p>
+          <div class="testimonial-author">
+            <div class="author-image">P</div>
+            <div>
+              <p><strong>Priya Sharma</strong></p>
+              <p>Home Chef, Delhi</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-bg">
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Saffron background">
+          </div>
+          <div class="stars">★★★★★</div>
+          <p>"As a restaurant owner, I've tried many saffron brands, but Kesariya stands out for its consistency and rich flavor. My customers love the authentic taste!"</p>
+          <div class="testimonial-author">
+            <div class="author-image">R</div>
+            <div>
+              <p><strong>Rajesh Kumar</strong></p>
+              <p>Restaurant Owner, Mumbai</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-bg">
+            <img src="https://images.unsplash.com/photo-1600333858835-232a27d2be1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Saffron background">
+          </div>
+          <div class="stars">★★★★★</div>
+          <p>"I've been using Kesariya saffron for my traditional sweets, and it brings back memories of my grandmother's cooking. Pure and authentic Kashmiri saffron!"</p>
+          <div class="testimonial-author">
+            <div class="author-image">S</div>
+            <div>
+              <p><strong>Sunita Devi</strong></p>
+              <p>Sweet Shop Owner, Jaipur</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-container">
+        <div class="contact-info contact-bg">
+          <h3 class="mb-3" style="color: var(--primary); font-size: 1.5rem;">Contact Information</h3>
+          <p class="mb-3">Have questions about our products or want to place a bulk order? Reach out to our team and we'll get back to you as soon as possible.</p>
+          <p class="mb-2"><strong>📞 Phone:</strong> +91 98765 43210</p>
+          <p class="mb-2"><strong>📱 WhatsApp:</strong> +91 98765 43210</p>
+          <p class="mb-2"><strong>✉️ Email:</strong> info@kesariya.com</p>
+          <p class="mb-2"><strong>📍 Address:</strong> Saffron Valley, Pampore, Kashmir, J&K 192121</p>
+          <p class="mb-2"><strong>🕒 Business Hours:</strong> Mon-Sat 9AM-6PM</p>
+        </div>
+        <div class="contact-form">
+          <h3 class="mb-3" style="color: var(--primary);">Send Us a Message</h3>
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" class="form-control" placeholder="Your Phone Number">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Subject">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h3 class="footer-title">🌸 KESARIYA</h3>
+            <p>Premium Kashmiri saffron for culinary excellence. Bringing the finest quality saffron from the valleys of Kashmir to your kitchen since 2010.</p>
+            <p class="mt-2"><strong>Follow us for saffron recipes and tips!</strong></p>
+          </div>
+          <div>
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="#home">🏠 Home</a></li>
+              <li><a href="#about">📖 About Us</a></li>
+              <li><a href="#gallery">🖼️ Gallery</a></li>
+              <li><a href="#products">🛒 Products</a></li>
+              <li><a href="#contact">📞 Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-title">Customer Care</h3>
+            <ul class="footer-links">
+              <li><a href="#">🔒 Privacy Policy</a></li>
+              <li><a href="#">📋 Terms of Service</a></li>
+              <li><a href="#">🚚 Shipping Policy</a></li>
+              <li><a href="#">↩️ Return Policy</a></li>
+              <li><a href="#">❓ FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-title">Newsletter</h3>
+            <p>Subscribe for saffron recipes, offers, and updates.</p>
+            <form class="newsletter-form">
+              <input type="email" class="newsletter-input" placeholder="Your Email" required>
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+            <p class="mt-2" style="font-size: 0.9rem;">📧 Get exclusive recipes and offers!</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <script>document.write(new Date().getFullYear())</script> Kesariya Saffron. All rights reserved. | Made with ❤️ for saffron lovers</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.getElementById('navLinks');
+      
+      mobileMenuBtn.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+      });
+      
+      // Close mobile menu when clicking on a link
+      const links = navLinks.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.classList.remove('active');
+        });
+      });
+      
+      // Enhanced cart functionality
+      const addToCartButtons = document.querySelectorAll('.btn-primary');
+      let cartCount = 0;
+      let cartTotal = 0;
+      let cartItems = [];
+      
+      addToCartButtons.forEach(button => {
+        if (button.textContent === 'Add to Cart') {
+          button.addEventListener('click', function() {
+            const productCard = button.closest('.product-card');
+            const priceText = productCard.querySelector('.product-price').textContent;
+            const price = parseInt(priceText.replace('₹', '').replace(',', ''));
+            const productName = productCard.querySelector('.product-title').textContent;
+            const productWeight = productCard.querySelector('.product-weight').textContent;
+            
+            cartCount++;
+            cartTotal += price;
+            cartItems.push({
+              name: productName,
+              weight: productWeight,
+              price: price
+            });
+            
+            // Create a more detailed cart summary
+            let cartSummary = `🛒 ${productName} added to cart!\n\n`;
+            cartSummary += `📦 Cart Summary:\n`;
+            cartSummary += `Items: ${cartCount}\n`;
+            cartSummary += `Total: ₹${cartTotal.toLocaleString('en-IN')}\n\n`;
+            cartSummary += `🎉 Thank you for choosing Kesariya Saffron!`;
+            
+            alert(cartSummary);
+            
+            // Change button text temporarily
+            const originalText = button.textContent;
+            button.textContent = 'Added! ✓';
+            button.style.backgroundColor = '#4CAF50';
+            
+            setTimeout(() => {
+              button.textContent = originalText;
+              button.style.backgroundColor = '';
+            }, 2000);
+          });
+        }
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Newsletter subscription
+      const newsletterForms = document.querySelectorAll('.newsletter-form');
+      newsletterForms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = this.querySelector('.newsletter-input').value;
+          if (email) {
+            alert(`🎉 Thank you for subscribing!\n\nYou'll receive saffron recipes and exclusive offers at ${email}`);
+            this.querySelector('.newsletter-input').value = '';
+          }
+        });
+      });
+      
+      // Contact form submission
+      const contactForm = document.querySelector('.contact-form form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('🙏 Thank you for your message!\n\nWe will get back to you within 24 hours.\n\nFor urgent queries, please call +91 98765 43210');
+          this.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
